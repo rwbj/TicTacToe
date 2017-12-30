@@ -28,6 +28,7 @@ public class TicTacToeFlash {
     public static void main(String[] args) throws Exception {
         //runHvH();
         //runHvRNGAI();
+        System.out.println("this is the holiday edit version");
         runHvAI();
         gsFileReader();
     }
