@@ -1,0 +1,73 @@
+TicTacToe
+..Atributes.....................
+
+..Methods.......................
+main(String[] args) : void
+newGame() : void
+turnO() : int
+turnX() : int
+
+
+Board
+..Atributes.....................
+int[][] board
+..Methods.......................
+Board(int[][] initalSetup) : constructor
+gets/setsBoard
+clearBoard() : void
+isFull() : boolean
+isOver() : boolean
+isWinner() : int
+printBoard() : void
+setBox(int pos, int val) : void
+toMark(int val) : char
+isOpen(int[][] pos) : boolean
+
+
+Player
+..Atributes.....................
+int playerId
+String playerName
+..Methods.......................
+Player(int initalId, String initalName) : constructor
+get/sets
+
+
+Human extends Player
+..Atributes.....................
+..Methods.......................
+inputPlay() : int
+
+
+AIMind extends Player
+..Atributes.....................
+//int[] board
+<GameState> gs
+File memory : static
+String fileName
+..Methods.......................
+AIMind(File memory)
+setMemoryFolder(File folder) : void
+getGS(int[] board)
+genFileName(int[] board) : String
+gameStateExists(String fileName) : boolean
+getGameState(Board board) : GameState
+getMove(GameState gs) : int
+	rng(<int> gsOpt) : int
+createGameState(Board board) : GameState
+	calcSymmetry(Board board) :  int<>[]
+canBlock(Board board) : int
+canWin(Board board) : int
+getResults(int winner) : void
+	saveGameStates()
+
+
+GameState implements Serializable
+..Atributes.....................
+//int[] board : static
+int <Integer>options : static
+//int <sym>symmetries : static //too complex
+int[3][2] symmetries : static //there will never be more than 3 symmetries (empty syms can be left 'null/-1')
+int chosenOption
+..Methods.......................
+GameState(int[] board, <int> options, <int>[]syms) : constructor
